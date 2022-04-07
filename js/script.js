@@ -6,23 +6,29 @@
 //l'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).     questo richiederà un minimo di ricerca
 
 //Chiedere quanti chilometri all'utente
-let kmNumber = parsInt(prompt('Dimmi quanti chilometri vuoi percorrere'));
+const kmNumber = parseInt(prompt('Dimmi quanti chilometri vuoi percorrere'));
 console.log(kmNumber);
 
 //chiedere età all'utente
-let userAge = parsInt(prompt('Dimmi la tua età'));
+const userAge = parseInt(prompt('Dimmi la tua età'));
 console.log(userAge);
 
-//generare prezzo finale
-let finalPrice = kmNumber * 0.21;
+//generare prezzo base
+const basePrice = kmNumber * 0.21;
 
-//elaborazione
-
+//logica
 let finalPrice;
+
 if (userAge < 18) {
-    finalPrice = ((kmNumber) * 0.21) - (((kmNumber) * 0.21)/100 * 20);
+    // prezzo base - 20%
+    sconto = (basePrice / 100) * 20;
+    finalPrice = basePrice - sconto;
 } else if (userAge > 65) {
-    finalPrice = ((kmNumber) * 0.21) - (((kmNumber) * 0.21)/100 * 40);
-} else (finalPrice);
+    // prezzo base - 40%
+    sconto = (basePrice / 100) * 40;
+    finalPrice = basePrice - sconto;
+} else {
+    finalPrice = basePrice;
+}
 
 console.log(finalPrice);
