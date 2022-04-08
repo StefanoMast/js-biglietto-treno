@@ -14,7 +14,7 @@ const userAge = parseInt(prompt('Dimmi la tua età'));
 console.log(userAge);
 
 //generare prezzo base
-const basePrice = kmNumber * 0.21;
+let basePrice = kmNumber * 0.21;
 
 //logica
 let finalPrice;
