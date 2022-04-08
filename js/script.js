@@ -32,3 +32,5 @@ if (userAge < 18) {
 }
 
 console.log(finalPrice);
+
+document.getElementById('price').innerHTML= 'il prezzo del biglietto è ${price.toFixed(2)}'
